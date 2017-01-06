@@ -27,7 +27,11 @@ def custom_len(input_list):
 
     """
 
-    return input_list.index('Do') + 1
+    return (input_list.index(input_list[-2]) + 2)
+
+    #doesn't work:
+    #(because 'Do' exists twice)
+    #input_list.index(input_list[-1]) + 1
 
 
 # For the next four exercises, you'll need to be clever and think about ways
@@ -55,7 +59,15 @@ def custom_append(input_list, value):
 
     """
 
-    pass
+    #this works:
+    #input_list += [value]
+
+    #so does this:
+    input_list[-1:] = [input_list[-1], [value]]
+
+    #doesn't work:
+    #(same problem as delete_middle)
+    #input_list = input_list + [value]
 
 
 def custom_extend(input_list, second_list):
